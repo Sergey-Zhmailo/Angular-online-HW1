@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mb-3" *ngFor="let post of posts">
+      <div class="card" [ngClass]="{'bg-success': post.id === 2}">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.text }}</p>
+          <a href="#" class="btn btn-dark">Read more</a>
+        </div>
+      </div>
+    </div>
+    <!--<div class="alert alert-info" *ngIf="!posts.length">No posts find!</div>-->
+    <!--<div class="alert alert-info" [hidden]="posts.length">No posts find!</div>-->
+  </div>
+  <button (click)="toggleInfoBlock()">{{ infoIsShown ? 'Hide info' : 'Show info' }}</button>
+  <div class="info" *ngIf="infoIsShown">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus beatae fugiat illum soluta. Ab aperiam dolor doloremque laborum laudantium quam similique sint, suscipit tempore voluptatum. Animi autem nam suscipit temporibus.</p>
+  </div>
+</div>
